@@ -1,8 +1,8 @@
 import 'package:bookly/core/utils/assest.dart';
 import 'package:flutter/material.dart';
 
-class CustomListViewItem extends StatelessWidget {
-  const CustomListViewItem({super.key});
+class FeauteredListViewItem extends StatelessWidget {
+  const FeauteredListViewItem({super.key});
 
   @override
   Widget build(BuildContext context) {
