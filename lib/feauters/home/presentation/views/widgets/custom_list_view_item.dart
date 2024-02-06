@@ -7,7 +7,7 @@ class FeauteredListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  AspectRatio(
-      aspectRatio: 1.7/3,
+      aspectRatio: 1.8 /3,
       child: Container(
         decoration:  BoxDecoration(
           color: Colors.red,
