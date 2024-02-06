@@ -17,11 +17,13 @@ class HomeViewBody extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CustomAppBar(),
-            SizedBox(
-              height: 50,
-            ),
+            
             FeauterBooksListView(),
-            Text("BestSellers",style: Styles.titleMedium,)
+            SizedBox(
+             height: 50,
+            ),
+            Text("BestSellers",style: Styles.titleMedium,),
+            BestSellersListViewItem(),
           ],
       
       ),
@@ -29,3 +31,36 @@ class HomeViewBody extends StatelessWidget {
   }
 }
 
+class BestSellersListViewItem extends StatelessWidget {
+  const BestSellersListViewItem({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return  SizedBox(
+      height: 125,
+      child: Row(
+        children: [
+        AspectRatio(
+        aspectRatio: 2.5/4,
+        child: Container(
+          decoration:  BoxDecoration(
+          borderRadius: BorderRadius.circular(8),
+            image:const DecorationImage(
+              
+              image: AssetImage(AssestData.test_image),
+              fit: BoxFit.fill
+              ),
+      
+          ),
+        ),
+      ),
+         const Column(
+            children: [
+    
+            ],
+          )
+        ],
+      ),
+    );
+  }
+}
