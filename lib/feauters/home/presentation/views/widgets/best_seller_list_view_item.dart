@@ -1,8 +1,10 @@
 import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/assest.dart';
 import 'package:bookly/core/utils/styles.dart';
+import 'package:bookly/feauters/home/presentation/views/widgets/book_rating.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BestSellersListViewItem extends StatelessWidget {
   const BestSellersListViewItem({super.key});
@@ -29,29 +31,34 @@ class BestSellersListViewItem extends StatelessWidget {
         ),
       ),
       const SizedBox(width: 20,),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-              width:MediaQuery.of(context).size.width*.5 ,
-              child: Text(
-                'Harry Potter and the Goblet of Fire .',
-                style: Styles.textStyle20.copyWith(fontFamily: kGtSectraFine),
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                )),
-                const SizedBox(height: 3,),
-               const Text('JK.Rowling',style: Styles.textStyle14,),
-                const SizedBox(height: 3,),
-                Row(
-                children: [
-                  Text(r'19.99 $',style: Styles.textStyle20.copyWith(fontWeight: FontWeight.bold))
-                ],
-               ),
-            ],
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                width:MediaQuery.of(context).size.width*.5 ,
+                child: Text(
+                  'Harry Potter and the Goblet of Fire .',
+                  style: Styles.textStyle20.copyWith(fontFamily: kGtSectraFine),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  )),
+                  const SizedBox(height: 3,),
+                 const Text('JK.Rowling',style: Styles.textStyle14,),
+                  const SizedBox(height: 3,),
+                  Row(
+                  children: [
+                    Text(r'19.99 $',style: Styles.textStyle20.copyWith(fontWeight: FontWeight.bold)),
+                   const Spacer(),
+                   const BookRate(),
+                  ],
+                 ),
+              ],
+            ),
           )
         ],
       ),
     );
   }
 }
+
