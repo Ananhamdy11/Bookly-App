@@ -3,6 +3,7 @@ import 'package:bookly/core/utils/api_service.dart';
 import 'package:bookly/feauters/home/data/models/book_model/book_model.dart';
 import 'package:bookly/feauters/home/data/repos/home_repo.dart';
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 //import 'package:dio/dio.dart';
 
  class HomeRepoImplementation extends HomeRepo{
@@ -23,7 +24,11 @@ for (var item in data['items']) {
 return right(books);
 
 } on Exception catch (e) {
-return left(ServerFailure());
+if(e is DioError){
+  return left(ServerFailure.fromDioError(e));
+}
+return left(ServerFailure(e.toString()));
+
 }
   }
 
